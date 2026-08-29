@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        //giris mesaji
+        System.out.println(" OTO MADEN KAZMA ALANINA HOS GELDINIZ ");
+        System.out.println("--------------------------------------");
+        System.out.print("Envanter Kapasitesini Giriniz (Örn: 5): ");
+        //burada oyuncunun envanter bosluguna bakiyoruz ancak sunucu icerisinde bilet sistemi ekliyebiliriz
+        int kapasite = scanner.nextInt();
+
+        System.out.println("\n=== OTO-MADEN BAŞLADI ===");
+        
+        //burada ise tekrarlamasini sagliyoruz
+        for (int i = 1; kapasite > 0; i++) {
+            
+            //her kazmada 1 kapasite azalmasini sagliyoruz sagliyoruz
+            kapasite--;
+            
+            //madenlerin sansa gore verilmesini saglayan bolum
+            int sans = random.nextInt(5) + 1;
+            
+
+                    if (sans == 1) {
+                        System.out.println(i + ". Kazilan Maden [64x KOMUR] Kalan Kazim Hakki: " + kapasite);
+                        
+                    } else if (sans == 2) {
+                        System.out.println(i + ". Kazilan Maden [COP] Kalan Kazim Hakki: " + kapasite);
+                        
+                    } else if (sans == 3) {
+                        System.out.println(i + ". Kazilan Maden [128x TAS] Kalan Kazim Hakki: " + kapasite);
+                        
+                    } else if (sans == 4) {
+                        System.out.println(i + ". Kazilan Maden [64x BLOK DEMIR] Kalan Kazim Hakki: " + kapasite);
+                        
+                    } else if (sans == 5) {
+                        System.out.println(i + ". Kazilan Maden [64x ELMAS] KaLan Kazim Hakki: " + kapasite);
+                    }
+            
+        }
+    }
+}
