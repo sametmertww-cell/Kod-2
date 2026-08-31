@@ -1,0 +1,41 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("=== BALIK TUTMA ETKİNLİĞİ ===");
+        System.out.print("Kaç adet yem kullanmak istiyorsunuz?: ");
+        
+        int yemSayisi = scanner.nextInt(); 
+
+        if (yemSayisi <= 0) {
+            System.out.println("Yeminiz yok, balık tutamazsınız!");
+        } else {
+            System.out.println("\nOltalar suya atıldı...");
+
+            for (int i = 1; yemSayisi > 0; i++) {
+                
+                yemSayisi--; 
+
+                int sans = random.nextInt(4) + 1; 
+
+                if (sans == 1) {
+                    System.out.println(i + ". Atış: [SIRT ÇANTASI] Eski Bot Yakaladınız! Kalan Yem: " + yemSayisi);
+                } else if (sans == 2) {
+                    System.out.println(i + ". Atış: [BALIK] 1x Çiğ Somon Yakaladınız! Kalan Yem: " + yemSayisi);
+                } else if (sans == 3) {
+                    System.out.println(i + ". Atış: [EFANEVİ] Büyülü Oltayı Sudan Çıkardınız! Kalan Yem: " + yemSayisi);
+                } else if (sans == 4) {
+                    System.out.println(i + ". Atış: [HAZİNE] Deniz Kızı Sandığı Buldunuz! Kalan Yem: " + yemSayisi);
+                }
+            }
+
+            System.out.println("Bütün yemleriniz bitti!");
+        }
+
+        scanner.close();
+    }
+}
